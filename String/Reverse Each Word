@@ -1,0 +1,19 @@
+public class Solution {
+
+	public static String reverseEachWord(String str) {
+		//Your code goes here
+		String result="";
+      String arr[]=str.split(" ");
+	  for(int i=0;i<arr.length ;i++){
+		  String word=arr[i];
+		  //reverse word
+		  String revstr="";
+		  for(int j=word.length()-1 ;j>=0;j--){
+            revstr += word.charAt(j)  ;
+		  }
+		  result=result.concat(revstr +" ");
+	  }
+	  return result.trim();
+	}
+
+}
