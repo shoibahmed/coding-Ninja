@@ -1,0 +1,17 @@
+public static char highestOccuringChar(String str) {
+		//Your code goes here
+		int []freq =new int[300];
+		//to store no of times a alphabet if occoring
+		for(int i=0 ; i<str.length() ; i++){
+			freq[str.charAt(i)]++ ; 
+		}
+		char max=str.charAt(0);
+		int Max=0;
+		for(int i=0 ;i<300 ;i++){
+			if(Max<freq[i]){
+				max=(char)(i);
+				Max=freq[i];
+			}
+		}
+		return max;
+	}
