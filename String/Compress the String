@@ -1,0 +1,23 @@
+public static String getCompressedString(String str) {
+		// Write your code here.
+		StringBuffer bstr= new StringBuffer(str);
+		int i=0;
+		while(i<bstr.length()){
+			int j=i+1 , count=1;
+				while(j < bstr.length() && bstr.charAt(i) == bstr.charAt(j)){
+                count++;
+				j++;
+			}
+			if(count>1){
+				bstr.delete(i+1,j);
+				bstr.insert(i+1, count);
+				i=i++;
+			}else{
+				i++;
+			}
+			
+			
+		}
+		String ans = new String(bstr);
+   return ans ;
+	}
