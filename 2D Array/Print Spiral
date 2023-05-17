@@ -1,0 +1,39 @@
+// video link  if you dont understand - https://youtu.be/3Zv-s9UUrFM
+public class Solution {
+
+	public static void spiralPrint(int matrix[][]){
+		//Your code goes here
+		if(matrix.length>0){
+		int top=0 ;
+		int bottom=matrix.length-1 ;
+		int left=0 ;
+		int right=matrix[0].length-1 ;
+        while(top<=bottom && left<=right){
+		//left2right
+		for(int i=left ; i<=right ; i++){
+			System.out.print(matrix[top][i] + " ") ;
+		}
+		top++ ;
+		//top2bottom
+		for(int i=top ; i<=bottom ; i++){
+			System.out.print(matrix[i][right] + " ") ;
+		}
+		right-- ;
+		if(top<=bottom){ // for horizontal array so that it may not print same line reverse
+		//right2left
+		for(int i=right ; i>=left ; i--){
+			System.out.print(matrix[bottom][i] + " ") ;
+		}
+		bottom-- ;
+		}
+		if(left<=right){ //for vertical so that it may not print same no in reverse
+		//bottom2top
+		for(int i=bottom ; i>=top ; i--){
+			System.out.print(matrix[i][left] + " ") ;
+		}
+		left++ ;
+		}
+		}
+		}
+	}
+}
